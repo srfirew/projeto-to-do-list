@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO List - Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Minhas Tarefas</h1>
+
+    <form id="todo-form">
+      <label for="task">Nova tarefa</label>
+      <input id="task" name="task" type="text" placeholder="Adicione uma nova tarefa..." required />
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <section class="actions">
+      <button data-filter="all">📋 Todas</button>
+      <button data-filter="pending">⏳ Pendentes</button>
+      <button data-filter="done">✅ Concluídas</button>
+      <button id="copy">📋 Copiar resumo</button>
+    </section>
+
+    <p id="loading" hidden>⏳ Carregando tarefas...</p>
+
+    <ul id="todo-list" aria-live="polite"></ul>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+form label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+input,
+button {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+input {
+  background: #f8f9ff;
+  color: #333;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+@media (min-width: 600px) {
+  form {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  form label {
+    display: none;
+  }
+
+  input {
+    flex: 1;
+  }
+
+  form button {
+    flex: 0.3;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f8f9ff;
+  border-radius: 15px;
+}
+
+.actions button {
+  padding: 0.7rem 1.2rem;
+  background: white;
+  color: #667eea;
+  border: 2px solid #e0e0e0;
+  font-weight: 600;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.actions button:hover {
+  opacity: 1;
+  border-color: #667eea;
+}
+
+.actions button[style*="opacity: 1"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  background: #f8f9ff;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+li:hover {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transform: translateX(4px);
+}
+
+.task {
+  flex: 1;
+  color: #333;
+  word-break: break-word;
+}
+
+.task.done {
+  text-decoration: line-through;
+  color: #aaa;
+  opacity: 0.7;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.buttons button {
+  width: 50px;
+  padding: 0.5rem 0.8rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  color: #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.buttons button.rmv:hover {
+  background: #ee6363;
+  color: white;
+  border-color: #ee6363;
+  transform: scale(1.1);
+}
+
+.buttons button:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+  transform: scale(1.1);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+#loading {
+  text-align: center;
+  color: #667eea;
+  font-weight: 600;
+  padding: 1rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.error {
+  color: #ff6b6b;
+  background: #ffe0e0;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-left: 4px solid #ff6b6b;
+}
+
+@media (max-width: 599px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  li {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .buttons {
+    margin-left: 0;
+    order: 3;
+    width: 100%;
+  }
+}
